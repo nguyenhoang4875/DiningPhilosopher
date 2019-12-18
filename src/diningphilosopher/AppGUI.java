@@ -16,7 +16,6 @@ import javax.swing.JButton;
 
 public class AppGUI extends JFrame implements OnPhilosopherActionListenter, ActionListener {
     private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
     private String[] eatingResources = {"resources/eating-background-left.PNG",
             "resources/eating-background-right.PNG"};
     private String[] thinkingResources = {"resources/thinking-background-left.PNG",
@@ -26,6 +25,8 @@ public class AppGUI extends JFrame implements OnPhilosopherActionListenter, Acti
             "resources/8.PNG", "resources/9.PNG"};
     private String[] hungryResources = {"resources/hungry-background-left.PNG",
             "resources/hungry-background-right.PNG"};
+
+    private JPanel contentPane;
     private JLabel[] actionLabels = new JLabel[5];
     private JLabel backgroundLabel;
     private JButton btnExit;
