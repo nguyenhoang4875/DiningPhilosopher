@@ -15,9 +15,14 @@ public class DiningTable {
             forks[i] = new Fork(i);
         }
         for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
-            philosophers[i] = new Philosopher(i, forks[i], forks[(i + 1) % NUM_PHILOSOPHERS], listenner);
+            philosophers[i] = new Philosopher(i, forks[min(i,(i+1)% NUM_PHILOSOPHERS)], forks[max(i,(i + 1) % NUM_PHILOSOPHERS)], listenner);
             philosophers[i].setFinishedEating(false);
             philosophers[i].start();
+        }
+        for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
+            System.out.println("--------------------------------");
+            System.out.println("philosopher:"+i+ " left fork "+philosophers[i].getLeftFork().getId()+ " right fork "+philosophers[i].getRightFork().getId() );
+
         }
     }
 
@@ -48,5 +53,12 @@ public class DiningTable {
 
     public void play() {
         initTable(listenter);
+    }
+
+    public int min(int a,int b){
+        return a<b?a:b;
+    }
+    public int max(int a,int b){
+        return a>b?a:b;
     }
 }

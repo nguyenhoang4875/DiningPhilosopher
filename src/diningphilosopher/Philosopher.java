@@ -108,4 +108,19 @@ public class Philosopher extends Thread {
         return suspended;
     }
 
+    public Fork getLeftFork() {
+        return leftFork;
+    }
+
+    public void setLeftFork(Fork leftFork) {
+        this.leftFork = leftFork;
+    }
+
+    public Fork getRightFork() {
+        return rightFork;
+    }
+
+    public void setRightFork(Fork rightFork) {
+        this.rightFork = rightFork;
+    }
 }

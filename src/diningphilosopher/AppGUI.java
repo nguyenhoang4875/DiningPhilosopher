@@ -31,6 +31,9 @@ public class AppGUI extends JFrame implements OnPhilosopherActionListenter, Acti
     private boolean isReset = false;
 
     public static void main(String[] args) {
+
+        String a;
+
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
@@ -122,6 +125,7 @@ public class AppGUI extends JFrame implements OnPhilosopherActionListenter, Acti
         int id = philosopher.getPhilId();
         if (id == 0 || id == 2 || id == 1) {
             try {
+                // Set icon on thinking
                 actionLabels[id].setIcon(new ImageIcon(thinkingResources[0]));
             } catch (ArrayIndexOutOfBoundsException e) {
             }
@@ -131,6 +135,7 @@ public class AppGUI extends JFrame implements OnPhilosopherActionListenter, Acti
             } catch (ArrayIndexOutOfBoundsException e) {
             }
         }
+        // Put Fork
         putFork();
     }
 
